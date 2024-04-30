@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: cliente-route
+            uri: http://${CLIENTE_URI:localhost}:${CLIENTE_PORT:8081}
+            predicates:
+              - Path=/cliente/**
+
+          - id: cucina-route
+            uri: http://${CUCINA_URI:localhost}:${CUCINA_PORT:8082}
+            predicates:
+              - Path=/cucina/**
+
+
