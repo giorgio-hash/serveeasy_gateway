@@ -143,7 +143,7 @@ services:
       - "broker"
 
   db:
-    image: mariadb:latest
+    image: mariadb:11.4-rc
     container_name: mariadb
     restart: always
     environment:
@@ -164,7 +164,7 @@ services:
 
   
   phpmyadmin:
-    image: phpmyadmin:latest
+    image: phpmyadmin:5.2.1-apache
     container_name: phpmyadmin
     restart: always
     ports:
